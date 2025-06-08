@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { QrCode, Shield, Zap } from "lucide-react";
 
@@ -15,15 +14,19 @@ const Hero = () => {
           <div className="animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
               Don't Let One Bad Review{" "}
-              <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Ruin Your Reputation
+              <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block">
+                <span className="relative z-10">Ruin Your Reputation</span>
+                <span className="absolute bottom-0 left-0 w-0 h-1 bg-primary rounded-full animate-[progress-line_2s_ease-in-out_infinite]"></span>
               </span>
             </h1>
           </div>
           
           <div className="animate-fade-in-up animation-delay-200">
             <p className="text-xl sm:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
-              TrustQR helps you turn feedback into 5-star reviews with QR codes, AI alerts, and smart redirects.
+              TrustQR helps you turn feedback into <span className="relative inline-block text-primary font-semibold">
+                <span className="relative z-10">5-star reviews</span>
+                <span className="absolute bottom-0 left-0 w-0 h-1 bg-primary rounded-full animate-[progress-line_2s_ease-in-out_infinite_0.5s]"></span>
+              </span> with QR codes, AI alerts, and smart redirects.
             </p>
           </div>
 
