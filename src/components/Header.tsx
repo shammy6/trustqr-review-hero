@@ -25,11 +25,8 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="hidden sm:inline-flex">
-            Log In
-          </Button>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            Start Free
+            Get My QR
           </Button>
         </div>
       </div>

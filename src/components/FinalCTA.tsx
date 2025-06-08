@@ -16,10 +16,7 @@ const FinalCTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" variant="secondary" className="text-lg px-8 py-4 h-auto bg-background text-foreground hover:bg-background/90">
-              Get Started with TrustQR
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
-              Schedule Demo
+              Get My Free QR Code
             </Button>
           </div>
 
