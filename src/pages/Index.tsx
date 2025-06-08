@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -14,7 +13,6 @@ const Index = () => {
       <Hero />
       <Problem />
       <Features />
-      <Testimonials />
       <FinalCTA />
       <Footer />
     </div>

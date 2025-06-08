@@ -4,47 +4,67 @@ import { QrCode, Shield, Zap } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Don't Let One Bad Review{" "}
-            <span className="text-primary">Ruin Your Reputation</span>
-          </h1>
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-background to-background/80 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center max-w-5xl mx-auto">
+          <div className="animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
+              Don't Let One Bad Review{" "}
+              <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Ruin Your Reputation
+              </span>
+            </h1>
+          </div>
           
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            TrustQR turns customer feedback into 5-star reviews — with QR codes, AI sentiment detection, and instant alerts.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-4 h-auto bg-primary hover:bg-primary/90 text-primary-foreground">
-              Get My Free QR Code
-            </Button>
+          <div className="animate-fade-in-up animation-delay-200">
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
+              TrustQR helps you turn feedback into 5-star reviews with QR codes, AI alerts, and smart redirects.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="flex flex-col items-center text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                <QrCode className="w-8 h-8 text-primary" />
+          <div className="animate-scale-in animation-delay-400">
+            <a href="https://app.trustqr.com/signup" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
+                Get My Free QR Code
+              </Button>
+            </a>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
+            <div className="animate-fade-in-up animation-delay-600">
+              <div className="flex flex-col items-center text-center p-8 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300 hover:bg-card/70 group">
+                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
+                  <QrCode className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">2 Minutes Setup</h3>
+                <p className="text-muted-foreground leading-relaxed">Quick and easy QR code generation. Start protecting your reputation instantly.</p>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Smart QR Codes</h3>
-              <p className="text-muted-foreground">Collect feedback before it goes public</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                <Shield className="w-8 h-8 text-primary" />
+            <div className="animate-fade-in-up animation-delay-700">
+              <div className="flex flex-col items-center text-center p-8 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300 hover:bg-card/70 group">
+                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
+                  <Shield className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">24/7 Protection</h3>
+                <p className="text-muted-foreground leading-relaxed">Continuous monitoring and smart routing of customer feedback around the clock.</p>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">AI Protection</h3>
-              <p className="text-muted-foreground">Detect negative sentiment instantly</p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                <Zap className="w-8 h-8 text-primary" />
+            <div className="animate-fade-in-up animation-delay-800">
+              <div className="flex flex-col items-center text-center p-8 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300 hover:bg-card/70 group">
+                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
+                  <Zap className="w-10 h-10 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Instant Alerts Before Things Go Public</h3>
+                <p className="text-muted-foreground leading-relaxed">Get notified immediately when issues arise, so you can fix them before they become public reviews.</p>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Instant Alerts</h3>
-              <p className="text-muted-foreground">Fix issues before they become reviews</p>
             </div>
           </div>
         </div>
