@@ -7,82 +7,82 @@
 
 @layer base {
   :root {
-    --background: 220 30% 8%;
+    --background: 12 25% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 220 25% 12%;
+    --card: 12 20% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 25% 12%;
+    --popover: 12 20% 12%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 158 64% 52%;
-    --primary-foreground: 220 30% 8%;
+    --primary-foreground: 12 25% 8%;
 
-    --secondary: 220 20% 18%;
+    --secondary: 12 15% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 20% 18%;
+    --muted: 12 15% 18%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 158 64% 52%;
-    --accent-foreground: 220 30% 8%;
+    --accent-foreground: 12 25% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
+    --border: 12 15% 20%;
+    --input: 12 15% 20%;
     --ring: 158 64% 52%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 220 25% 10%;
+    --sidebar-background: 12 20% 10%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 158 64% 52%;
-    --sidebar-primary-foreground: 220 30% 8%;
-    --sidebar-accent: 220 20% 18%;
+    --sidebar-primary-foreground: 12 25% 8%;
+    --sidebar-accent: 12 15% 18%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 20% 20%;
+    --sidebar-border: 12 15% 20%;
     --sidebar-ring: 158 64% 52%;
   }
 
   .dark {
-    --background: 220 30% 8%;
+    --background: 12 25% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 220 25% 12%;
+    --card: 12 20% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 25% 12%;
+    --popover: 12 20% 12%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 158 64% 52%;
-    --primary-foreground: 220 30% 8%;
+    --primary-foreground: 12 25% 8%;
 
-    --secondary: 220 20% 18%;
+    --secondary: 12 15% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 20% 18%;
+    --muted: 12 15% 18%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 158 64% 52%;
-    --accent-foreground: 220 30% 8%;
+    --accent-foreground: 12 25% 8%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
+    --border: 12 15% 20%;
+    --input: 12 15% 20%;
     --ring: 158 64% 52%;
     
-    --sidebar-background: 220 25% 10%;
+    --sidebar-background: 12 20% 10%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 158 64% 52%;
-    --sidebar-primary-foreground: 220 30% 8%;
-    --sidebar-accent: 220 20% 18%;
+    --sidebar-primary-foreground: 12 25% 8%;
+    --sidebar-accent: 12 15% 18%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 20% 20%;
+    --sidebar-border: 12 15% 20%;
     --sidebar-ring: 158 64% 52%;
   }
 }
@@ -141,18 +141,25 @@
     }
   }
   
-  @keyframes progress-line {
+  @keyframes underline-expand-green {
     0% {
       width: 0%;
       opacity: 0.8;
     }
-    50% {
+    100% {
       width: 100%;
       opacity: 1;
     }
+  }
+  
+  @keyframes underline-expand-red {
+    0% {
+      width: 0%;
+      opacity: 0.8;
+    }
     100% {
       width: 100%;
-      opacity: 0.8;
+      opacity: 1;
     }
   }
   
@@ -172,6 +179,46 @@
     animation: pulse-glow 2s ease-in-out infinite;
   }
   
+  .hover-underline-green {
+    position: relative;
+  }
+  
+  .hover-underline-green::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: hsl(var(--primary));
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .hover-underline-green:hover::after {
+    width: 100%;
+  }
+  
+  .hover-underline-red {
+    position: relative;
+  }
+  
+  .hover-underline-red::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: hsl(var(--destructive));
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .hover-underline-red:hover::after {
+    width: 100%;
+  }
+  
   .animation-delay-200 {
     animation-delay: 0.2s;
   }
@@ -182,6 +229,10 @@
   
   .animation-delay-600 {
     animation-delay: 0.6s;
+  }
+  
+  .animation-delay-700 {
+    animation-delay: 0.7s;
   }
   
   .animation-delay-800 {
