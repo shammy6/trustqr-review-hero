@@ -18,7 +18,7 @@ const Features = () => {
     {
       icon: <ArrowUp className="w-8 h-8" />,
       title: "Smart Review Routing",
-      description: "Happy customers get redirected to leave 5-star reviews on Google. Unhappy ones get private attention.",
+      description: "Happy customers get redirected to leave 5-star reviews on Google. Unhappy ones get private attention from you.",
       highlight: "Protects your reputation"
     },
     {
@@ -36,7 +36,7 @@ const Features = () => {
           <div className="animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-8">
               Turn Every Customer Into a{" "}
-              <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">5-Star Review</span>
+              <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block hover-underline-green">5-Star Review</span>
             </h2>
           </div>
           <div className="animate-fade-in-up animation-delay-200">
@@ -49,7 +49,7 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {features.map((feature, index) => (
             <div key={index} className={`group animate-fade-in-up animation-delay-${(index + 3) * 200}`}>
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-full hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30 hover:bg-card/70">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 h-full hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30 hover:bg-card/70 min-h-[280px] flex flex-col">
                 <div className="flex items-center gap-6 mb-6">
                   <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                     {feature.icon}
@@ -63,7 +63,7 @@ const Features = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-lg flex-grow">
                   {feature.description}
                 </p>
               </div>
