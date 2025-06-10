@@ -14,7 +14,7 @@ const Hero = () => {
               Don't Let One Bad Review{" "}
               <span style={{
               fontSize: 'clamp(1.25rem, 2vw, 2rem)'
-            }} className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block hover-underline-green px-0 whitespace-nowrap pb-1 text-5xl">
+            }} className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block hover-underline-green px-0 whitespace-nowrap pb-1 text-4xl">
                 Ruin Your Reputation
               </span>
             </h1>
