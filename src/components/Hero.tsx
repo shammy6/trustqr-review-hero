@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { QrCode, Shield, Zap } from "lucide-react";
 const Hero = () => {
@@ -12,9 +13,7 @@ const Hero = () => {
           <div className="animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-8 leading-tight">
               Don't Let One Bad Review{" "}
-              <span style={{
-              fontSize: 'clamp(1.25rem, 2vw, 2rem)'
-            }} className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block hover-underline-green px-0 whitespace-nowrap pb-1 text-4xl">
+              <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative inline-block hover-underline-green px-0 whitespace-nowrap pb-1 text-4xl lg:text-7xl">
                 Ruin Your Reputation
               </span>
             </h1>
