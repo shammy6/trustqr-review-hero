@@ -51,12 +51,6 @@ const FinalCTA = () => {
               </div>
             </div>
           </div>
-
-          <div className="mt-16 text-center animate-fade-in-up animation-delay-900">
-            <p className="text-muted-foreground text-lg">
-              Join 500+ businesses already protecting their reputation with TrustQR
-            </p>
-          </div>
         </div>
       </div>
     </section>
