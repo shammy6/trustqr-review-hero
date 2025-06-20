@@ -140,6 +140,35 @@
       box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
     }
   }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes animate-gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   
   @keyframes underline-expand-green {
     0% {
@@ -177,6 +206,19 @@
   
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: animate-gradient 3s ease infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
   }
   
   .hover-underline-green {
@@ -227,6 +269,12 @@
   .hover-underline-red:hover::after {
     width: 100%;
   }
+
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
   
   .animation-delay-200 {
     animation-delay: 0.2s;
@@ -246,5 +294,21 @@
   
   .animation-delay-800 {
     animation-delay: 0.8s;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.1s;
   }
 }
