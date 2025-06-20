@@ -11,12 +11,8 @@ const FAQ = () => {
       answer: "TrustQR creates smart QR codes that route happy customers to review platforms while directing unhappy customers to private feedback forms. This helps you address issues before they become public reviews."
     },
     {
-      question: "Can I customize my QR code?",
-      answer: "Yes! You can customize your QR code with your brand colors, logo, and design elements to match your business aesthetic while maintaining full functionality."
-    },
-    {
       question: "What review platforms do you support?",
-      answer: "We support all major review platforms including Google Reviews, Yelp, Facebook, TripAdvisor, and many more. You can connect multiple platforms and customize routing based on your preferences."
+      answer: "We support Google pages, Facebook pages, websites, and other custom URLs. You choose where your QR leads."
     },
     {
       question: "How quickly will I receive alerts?",
