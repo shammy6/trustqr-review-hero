@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { QrCode } from "lucide-react";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -40,8 +39,12 @@ const Header = () => {
     }`}>
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-3 group cursor-pointer">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105">
-            <QrCode className="w-5 h-5 text-primary-foreground" />
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105">
+            <img 
+              src="/lovable-uploads/5f01a540-f774-4854-b537-0e395d417bbe.png" 
+              alt="TrustQR Logo" 
+              className="w-10 h-10 rounded-xl"
+            />
           </div>
           <span className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">TrustQR</span>
         </div>
