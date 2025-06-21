@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -48,8 +50,8 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li><a href="#faq" className="hover:text-primary transition-colors duration-300">FAQ</a></li>
               <li><a href="#" className="hover:text-primary transition-colors duration-300">Contact</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Terms</a></li>
+              <li><Link to="/privacy" className="hover:text-primary transition-colors duration-300">Privacy</Link></li>
+              <li><Link to="/terms" className="hover:text-primary transition-colors duration-300">Terms</Link></li>
             </ul>
           </div>
         </div>
