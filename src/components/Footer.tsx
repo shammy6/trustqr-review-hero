@@ -1,12 +1,46 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll to top
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -20,7 +54,7 @@ const Footer = () => {
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105">
                 <img 
-                  src="/lovable-uploads/5f01a540-f774-4854-b537-0e395d417bbe.png" 
+                  src="/lovable-uploads/d609236f-80e3-4b18-9d2e-0235b9267791.png" 
                   alt="TrustQR Logo" 
                   className="w-10 h-10 rounded-xl"
                 />
@@ -38,8 +72,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-6 text-lg">Product</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li><a href="#features" className="hover:text-primary transition-colors duration-300">Features</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors duration-300">Pricing</a></li>
+              <li><button onClick={() => scrollToSection('features')} className="hover:text-primary transition-colors duration-300">Features</button></li>
+              <li><button onClick={() => scrollToSection('pricing')} className="hover:text-primary transition-colors duration-300">Pricing</button></li>
               <li><a href="https://app.trustqr.com" className="hover:text-primary transition-colors duration-300">Launch My Link</a></li>
               <li><a href="#" className="hover:text-primary transition-colors duration-300">API</a></li>
             </ul>
@@ -48,8 +82,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-6 text-lg">Support</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li><a href="#faq" className="hover:text-primary transition-colors duration-300">FAQ</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">Contact</a></li>
+              <li><button onClick={() => scrollToSection('faq')} className="hover:text-primary transition-colors duration-300">FAQ</button></li>
+              <li><a href="mailto:gooweby@gmail.com" className="hover:text-primary transition-colors duration-300">Contact</a></li>
               <li><Link to="/privacy" className="hover:text-primary transition-colors duration-300">Privacy</Link></li>
               <li><Link to="/terms" className="hover:text-primary transition-colors duration-300">Terms</Link></li>
             </ul>
