@@ -1,7 +1,17 @@
-
 import { Button } from "@/components/ui/button";
+import { useClickTracking } from "@/hooks/useClickTracking";
 
 const FinalCTA = () => {
+  const { trackClick } = useClickTracking();
+
+  const handleCTAClick = async () => {
+    // Track the click event before redirecting
+    await trackClick('TrustQR', 'cta_click');
+    
+    // Redirect to the app
+    window.open('https://app.trustqr.com', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-primary/5 relative overflow-hidden">
       {/* Background decoration */}
@@ -24,11 +34,13 @@ const FinalCTA = () => {
           </div>
 
           <div className="animate-scale-in animation-delay-400 mb-16">
-            <a href="https://app.trustqr.com" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
-                Launch My Link
-              </Button>
-            </a>
+            <Button 
+              size="lg" 
+              className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
+              onClick={handleCTAClick}
+            >
+              Launch My Link
+            </Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
