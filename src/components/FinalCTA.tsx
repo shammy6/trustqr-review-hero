@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useClickTracking } from "@/hooks/useClickTracking";
 
@@ -5,10 +6,23 @@ const FinalCTA = () => {
   const { trackClick } = useClickTracking();
 
   const handleCTAClick = async () => {
-    // Track the click event before redirecting
-    await trackClick('TrustQR', 'cta_click');
+    console.log('CTA button clicked - starting tracking process');
     
-    // Redirect to the app
+    try {
+      // Track the click event before redirecting
+      const result = await trackClick('TrustQR', 'cta_click');
+      
+      if (result.success) {
+        console.log('Click tracking completed successfully');
+      } else {
+        console.warn('Click tracking failed but continuing with redirect');
+      }
+    } catch (error) {
+      console.error('Click tracking threw an error:', error);
+    }
+    
+    // Always redirect regardless of tracking success/failure
+    console.log('Opening app URL...');
     window.open('https://app.trustqr.com', '_blank', 'noopener,noreferrer');
   };
 
