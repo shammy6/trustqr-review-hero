@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { QrCode, Shield, Zap } from "lucide-react";
 
@@ -19,12 +20,6 @@ const Hero = () => {
               </span>
             </h1>
           </div>
-
-          <div className="animate-fade-in-up animation-delay-100">
-            <p className="text-sm text-muted-foreground mt-2 mb-8">
-              ✨ No download — feedback in seconds.
-            </p>
-          </div>
           
           <div className="animate-fade-in-up animation-delay-200">
             <p className="text-xl sm:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
@@ -40,6 +35,12 @@ const Hero = () => {
                 Launch My Link
               </Button>
             </a>
+          </div>
+
+          <div className="animate-fade-in-up animation-delay-500">
+            <p className="text-sm text-muted-foreground mt-4 mb-12">
+              ✨ No download — feedback in seconds.
+            </p>
           </div>
 
           {/* Features Grid */}
