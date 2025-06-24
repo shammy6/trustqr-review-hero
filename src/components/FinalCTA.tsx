@@ -46,7 +46,7 @@ const FinalCTA = () => {
             </p>
           </div>
 
-          <div className="animate-scale-in animation-delay-400 mb-2">
+          <div className="animate-scale-in animation-delay-400">
             <Button 
               size="lg" 
               className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
@@ -57,8 +57,8 @@ const FinalCTA = () => {
           </div>
 
           <div className="animate-fade-in-up animation-delay-500 mb-16">
-            <p className="text-sm text-muted-foreground mt-2">
-              ✨ No download needed — just click your QR code or link and leave feedback instantly.
+            <p className="text-sm text-muted-foreground mt-4">
+              ✨ No download — feedback in seconds.
             </p>
           </div>
 

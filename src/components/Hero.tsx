@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { QrCode, Shield, Zap } from "lucide-react";
 
@@ -19,6 +18,12 @@ const Hero = () => {
                 Ruin Your Reputation
               </span>
             </h1>
+          </div>
+
+          <div className="animate-fade-in-up animation-delay-100">
+            <p className="text-sm text-muted-foreground mt-2 mb-8">
+              ✨ No download — feedback in seconds.
+            </p>
           </div>
           
           <div className="animate-fade-in-up animation-delay-200">
