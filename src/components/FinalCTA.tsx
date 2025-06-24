@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useClickTracking } from "@/hooks/useClickTracking";
 
@@ -47,7 +46,7 @@ const FinalCTA = () => {
             </p>
           </div>
 
-          <div className="animate-scale-in animation-delay-400 mb-16">
+          <div className="animate-scale-in animation-delay-400 mb-2">
             <Button 
               size="lg" 
               className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
@@ -55,6 +54,12 @@ const FinalCTA = () => {
             >
               Launch My Link
             </Button>
+          </div>
+
+          <div className="animate-fade-in-up animation-delay-500 mb-16">
+            <p className="text-sm text-muted-foreground mt-2">
+              ✨ No download needed — just click your QR code or link and leave feedback instantly.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
