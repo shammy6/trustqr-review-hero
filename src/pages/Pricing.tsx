@@ -13,43 +13,46 @@ const Pricing = () => {
     {
       name: "Free",
       price: { monthly: 0, annual: 0 },
-      description: "Perfect for getting started",
+      description: "Perfect for small businesses starting their reputation journey",
       features: [
         "Unlimited QR feedback links",
-        "Basic feedback alerts",
-        "Email support",
-        "Web dashboard access"
+        "Basic email feedback alerts",
+        "Standard email support",
+        "Web dashboard access",
+        "Basic analytics insights"
       ],
-      buttonText: "Get Started",
+      buttonText: "Start Free Today",
       buttonVariant: "outline" as const,
       popular: false
     },
     {
       name: "VIP",
       price: { monthly: 999, annual: 9592 },
-      description: "Best value for growing businesses",
+      description: "Enterprise-grade solution for businesses serious about reputation management",
       features: [
-        "All Premium features",
-        "Custom branding (QR codes + feedback pages)",
-        "Monthly performance reports",
-        "Dedicated account manager",
-        "Priority integrations",
-        "Advanced analytics dashboard"
+        "Everything in Premium Plan",
+        "Full custom branding (QR codes + feedback pages)",
+        "Comprehensive monthly performance reports",
+        "Dedicated account manager & consultation",
+        "Priority feature integrations",
+        "Advanced analytics dashboard with AI insights",
+        "White-label solution options"
       ],
-      buttonText: "Start VIP Trial",
+      buttonText: "Start VIP Experience",
       buttonVariant: "default" as const,
       popular: true
     },
     {
       name: "Premium",
       price: { monthly: 399, annual: 3192 },
-      description: "For serious reputation management",
+      description: "Advanced tools for growing businesses focused on reputation excellence",
       features: [
-        "All Free Plan features",
-        "AI-powered alert system",
-        "In-depth feedback analytics",
-        "Priority support",
-        "Custom response templates"
+        "Everything in Free Plan",
+        "AI-powered smart alert system",
+        "Advanced feedback analytics & insights",
+        "Priority customer support",
+        "Custom response templates",
+        "Detailed performance reports"
       ],
       buttonText: "Upgrade to Premium",
       buttonVariant: "outline" as const,
@@ -67,10 +70,10 @@ const Pricing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-all duration-500 ease-in-out">
       <Header />
       
-      <main className="py-20 lg:py-32">
+      <main className="py-20 lg:py-32 animate-fade-in">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Section */}
@@ -92,23 +95,27 @@ const Pricing = () => {
 
             {/* Billing Toggle */}
             <div className="animate-fade-in-up animation-delay-300">
-              <div className="flex items-center justify-center gap-4 mb-16">
-                <span className={`text-sm font-medium transition-colors ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-                  Monthly
+              <div className="flex items-center justify-center gap-6 mb-16">
+                <span className={`text-lg font-semibold transition-all duration-300 ${!isAnnual ? 'text-primary scale-105' : 'text-muted-foreground'}`}>
+                  Monthly Billing
                 </span>
-                <Switch
-                  checked={isAnnual}
-                  onCheckedChange={setIsAnnual}
-                  className="data-[state=checked]:bg-primary"
-                />
-                <span className={`text-sm font-medium transition-colors ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-                  Annual
-                </span>
-                {isAnnual && (
-                  <span className="text-xs bg-primary text-primary-foreground px-2 py-1 rounded-full font-medium">
-                    Save 20%
+                <div className="relative">
+                  <Switch
+                    checked={isAnnual}
+                    onCheckedChange={setIsAnnual}
+                    className="data-[state=checked]:bg-primary"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className={`text-lg font-semibold transition-all duration-300 ${isAnnual ? 'text-primary scale-105' : 'text-muted-foreground'}`}>
+                    Yearly Billing
                   </span>
-                )}
+                  {isAnnual && (
+                    <span className="text-sm bg-gradient-to-r from-primary to-accent text-primary-foreground px-3 py-1 rounded-full font-bold animate-pulse">
+                      Save 20%
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
