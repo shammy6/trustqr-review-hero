@@ -10,9 +10,11 @@ const PricingFAQ = () => {
         <p className="text-muted-foreground mb-8">
           Contact our team for personalized guidance on choosing the right plan.
         </p>
-        <Button variant="outline" size="lg">
-          Contact Sales
-        </Button>
+        <a href="mailto:gooweby@gmail.com?subject=Sales Inquiry - TrustQR Pricing">
+          <Button variant="outline" size="lg" className="hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            Contact Sales
+          </Button>
+        </a>
       </div>
     </div>
   );

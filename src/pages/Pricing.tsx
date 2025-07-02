@@ -13,8 +13,8 @@ const Pricing = () => {
     <div className="min-h-screen bg-background transition-all duration-500 ease-in-out">
       <Header />
       
-      <main className="py-20 lg:py-32 animate-fade-in">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="py-12 sm:py-20 lg:py-32 animate-fade-in">
+        <div className="container max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <PricingHeader isAnnual={isAnnual} setIsAnnual={setIsAnnual} />
           <PricingCards isAnnual={isAnnual} />
           <PricingFAQ />

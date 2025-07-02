@@ -7,7 +7,7 @@ interface PricingCardsProps {
 
 const PricingCards = ({ isAnnual }: PricingCardsProps) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
       {pricingPlans.map((plan, index) => (
         <PricingCard
           key={plan.name}
