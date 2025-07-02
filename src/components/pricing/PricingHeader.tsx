@@ -38,11 +38,11 @@ const PricingHeader = ({ isAnnual, setIsAnnual }: PricingHeaderProps) => {
           </div>
           <div className="flex items-center gap-2">
             <span className={`text-lg font-semibold transition-all duration-300 ${isAnnual ? 'text-primary scale-105' : 'text-muted-foreground'}`}>
-              Yearly Billing
+              Annual Billing
             </span>
             {isAnnual && (
               <span className="text-sm bg-gradient-to-r from-primary to-accent text-primary-foreground px-3 py-1 rounded-full font-bold animate-pulse">
-                Save 20%
+                (Save 20%)
               </span>
             )}
           </div>
