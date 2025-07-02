@@ -11,7 +11,7 @@ const PricingHeader = ({ isAnnual, setIsAnnual }: PricingHeaderProps) => {
       <div className="animate-fade-in-up">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
           Simple, Transparent{" "}
-          <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover-underline-green">
             Pricing
           </span>
         </h1>
