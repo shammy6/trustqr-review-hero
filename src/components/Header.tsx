@@ -2,12 +2,34 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { User } from "@supabase/supabase-js";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    // Get initial user
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate('/');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -114,11 +136,31 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <a href="https://app.trustqr.com" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-lg shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105 transform">
-              Launch My Link
+          {user ? (
+            <>
+              <Button 
+                onClick={() => navigate('/app')}
+                variant="outline" 
+                className="font-semibold px-4 rounded-lg hover:scale-105 transform transition-all duration-300"
+              >
+                Dashboard
+              </Button>
+              <Button 
+                onClick={handleSignOut}
+                variant="outline" 
+                className="font-semibold px-4 rounded-lg hover:scale-105 transform transition-all duration-300"
+              >
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <Button 
+              onClick={() => navigate('/auth')}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-lg shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105 transform"
+            >
+              Get Started
             </Button>
-          </a>
+          )}
         </div>
       </div>
     </header>

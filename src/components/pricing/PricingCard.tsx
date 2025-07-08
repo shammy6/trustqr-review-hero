@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { PricingPlan } from "@/data/pricingPlans";
 import { formatPrice } from "@/utils/pricing";
+import { usePayment } from "@/hooks/usePayment";
 
 interface PricingCardProps {
   plan: PricingPlan;
@@ -10,6 +11,13 @@ interface PricingCardProps {
 }
 
 const PricingCard = ({ plan, isAnnual, index }: PricingCardProps) => {
+  const { processPayment, isProcessing } = usePayment();
+
+  const handlePayment = () => {
+    const amount = isAnnual ? plan.price.annual : plan.price.monthly;
+    processPayment(plan.name.toLowerCase() as 'free' | 'premium' | 'vip', amount);
+  };
+
   return (
     <div
       className={`animate-fade-in-up relative rounded-2xl border transition-all duration-300 hover:scale-105 transform ${
@@ -63,13 +71,15 @@ const PricingCard = ({ plan, isAnnual, index }: PricingCardProps) => {
           <Button
             variant={plan.buttonVariant}
             size="lg"
+            onClick={handlePayment}
+            disabled={isProcessing}
             className={`w-full mb-6 sm:mb-8 h-12 text-sm sm:text-base ${
               plan.popular 
                 ? 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl' 
                 : ''
             }`}
           >
-            {plan.buttonText}
+            {isProcessing ? 'Processing...' : plan.buttonText}
           </Button>
         </div>
 
