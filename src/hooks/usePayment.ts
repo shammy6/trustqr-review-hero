@@ -8,7 +8,7 @@ export const usePayment = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const navigate = useNavigate();
 
-  const processPayment = async (planTier: 'free' | 'premium' | 'vip', amount: number) => {
+  const processPayment = async (planTier: 'free' | 'premium' | 'vip', amount: number, isAnnual: boolean = false) => {
     if (planTier === 'free') {
       // For free plan, redirect directly to app
       navigate('/app');
@@ -44,9 +44,13 @@ export const usePayment = () => {
         userName: profile?.name || '',
         onSuccess: async (response: any) => {
           try {
-            // Calculate expiry date (30 days from now)
+            // Calculate expiry date based on billing period
             const expiryDate = new Date();
-            expiryDate.setDate(expiryDate.getDate() + 30);
+            if (isAnnual) {
+              expiryDate.setDate(expiryDate.getDate() + 365);
+            } else {
+              expiryDate.setDate(expiryDate.getDate() + 30);
+            }
 
             // Update user's plan in database
             const { error: updateError } = await supabase
@@ -62,7 +66,7 @@ export const usePayment = () => {
             }
 
             toast({
-              title: "Payment Successful!",
+              title: "Payment successful! Your plan is now active.",
               description: `Welcome to TrustQR ${planTier.toUpperCase()} plan!`,
             });
 

@@ -15,7 +15,7 @@ const PricingCard = ({ plan, isAnnual, index }: PricingCardProps) => {
 
   const handlePayment = () => {
     const amount = isAnnual ? plan.price.annual : plan.price.monthly;
-    processPayment(plan.name.toLowerCase() as 'free' | 'premium' | 'vip', amount);
+    processPayment(plan.name.toLowerCase() as 'free' | 'premium' | 'vip', amount, isAnnual);
   };
 
   return (
