@@ -74,8 +74,7 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li><button onClick={() => scrollToSection('features')} className="hover:text-primary transition-colors duration-300">Features</button></li>
               <li><Link to="/pricing" className="hover:text-primary transition-colors duration-300">Pricing</Link></li>
-              <li><a href="https://app.trustqr.com" className="hover:text-primary transition-colors duration-300">Launch My Link</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300">API</a></li>
+              <li><a href="https://trustqr-webapp.vercel.app/" className="hover:text-primary transition-colors duration-300">Launch My Link</a></li>
             </ul>
           </div>
 

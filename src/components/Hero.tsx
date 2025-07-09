@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
 
           <div className="animate-scale-in animation-delay-400">
-            <a href="https://app.trustqr.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://trustqr-webapp.vercel.app/" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow">
                 Launch My Link
               </Button>

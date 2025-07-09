@@ -22,7 +22,7 @@ const FinalCTA = () => {
     
     // Always redirect regardless of tracking success/failure
     console.log('Opening app URL...');
-    window.open('https://app.trustqr.com', '_blank', 'noopener,noreferrer');
+    window.open('https://trustqr-webapp.vercel.app/', '_blank', 'noopener,noreferrer');
   };
 
   return (
