@@ -64,8 +64,15 @@ const Footer = () => {
             <p className="text-muted-foreground mb-6 max-w-md text-lg leading-relaxed">
               Strengthen your reputation with intelligent QR feedback, real-time alerts, and AI-powered sentiment insights.
             </p>
-            <div className="text-sm text-muted-foreground">
-              © 2025 TrustQR. All rights reserved.
+            <div className="text-sm text-muted-foreground space-y-2">
+              <div>© 2025 TrustQR. All rights reserved.</div>
+              <div className="flex items-center space-x-2">
+                <Link to="/terms" className="hover:text-primary transition-colors duration-300">Terms</Link>
+                <span>•</span>
+                <Link to="/privacy" className="hover:text-primary transition-colors duration-300">Privacy</Link>
+                <span>•</span>
+                <Link to="/refunds" className="hover:text-primary transition-colors duration-300">Refunds</Link>
+              </div>
             </div>
           </div>
 
