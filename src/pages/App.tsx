@@ -83,14 +83,14 @@ const App = () => {
                 <div className="flex items-center justify-between">
                   <span>Status:</span>
                   <div className="flex items-center gap-2">
-                    {userPlan.isActive ? (
+                    {userPlan?.isActive ? (
                       <CheckCircle className="w-4 h-4 text-green-500" />
                     ) : (
                       <XCircle className="w-4 h-4 text-red-500" />
                     )}
                     <span className="text-sm">
-                      {userPlan.isActive 
-                        ? `${userPlan.daysRemaining} days left` 
+                      {userPlan?.isActive 
+                        ? `${userPlan?.daysRemaining} days left` 
                         : 'Expired'
                       }
                     </span>
