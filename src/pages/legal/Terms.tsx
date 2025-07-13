@@ -1,6 +1,7 @@
-
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ArrowLeft } from "lucide-react";
 
 const Terms = () => {
   return (
@@ -8,6 +9,14 @@ const Terms = () => {
       <Header />
       
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <Link 
+          to="/app" 
+          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Dashboard
+        </Link>
+        
         <div className="prose prose-lg max-w-none">
           <h1 className="text-4xl font-bold text-foreground mb-8">Terms & Conditions</h1>
           
@@ -60,7 +69,7 @@ const Terms = () => {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">Contact</h2>
               <p className="leading-relaxed">
-                For questions about these terms, email us at: <a href="mailto:gooweby@gmail.com" className="text-primary hover:underline">gooweby@gmail.com</a>
+                For questions about these terms, email us at: <a href="mailto:support@trustqr.app" className="text-primary hover:underline">support@trustqr.app</a>
               </p>
             </section>
           </div>

@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ArrowLeft } from "lucide-react";
 
 const Refunds = () => {
   return (
@@ -7,6 +9,14 @@ const Refunds = () => {
       <Header />
       
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <Link 
+          to="/app" 
+          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Dashboard
+        </Link>
+        
         <div className="prose prose-lg max-w-none">
           <h1 className="text-4xl font-bold text-foreground mb-8">Refund and Cancellation Policy</h1>
           
