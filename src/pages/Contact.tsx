@@ -40,7 +40,7 @@ const Contact = () => {
               asChild 
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              <a href="mailto:gooweby@gmail.com">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gooweby@gmail.com">
                 gooweby@gmail.com
               </a>
             </Button>
@@ -62,11 +62,11 @@ const Contact = () => {
               className="w-full border-green-500/20 hover:bg-green-500/10"
             >
               <a 
-                href="https://wa.me/916306066510" 
+                href="https://wa.me/916306036510" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                +91 6306066510
+                +91 6306036510
               </a>
             </Button>
           </div>
