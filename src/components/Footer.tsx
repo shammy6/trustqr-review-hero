@@ -89,7 +89,7 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-6 text-lg">Support</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li><button onClick={() => scrollToSection('faq')} className="hover:text-primary transition-colors duration-300">FAQ</button></li>
-              <li><a href="mailto:gooweby@gmail.com" className="hover:text-primary transition-colors duration-300">Contact</a></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors duration-300">Contact</Link></li>
               <li><Link to="/privacy" className="hover:text-primary transition-colors duration-300">Privacy</Link></li>
               <li><Link to="/terms" className="hover:text-primary transition-colors duration-300">Terms</Link></li>
             </ul>

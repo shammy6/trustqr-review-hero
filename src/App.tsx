@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Privacy from "./pages/legal/Privacy";
 import Terms from "./pages/legal/Terms";
 import Refunds from "./pages/legal/Refunds";
+import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
 import AppPage from "./pages/App";
 import Auth from "./pages/Auth";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/refunds" element={<Refunds />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

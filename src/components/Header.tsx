@@ -155,10 +155,10 @@ const Header = () => {
             </>
           ) : (
             <Button 
-              onClick={() => navigate('/auth')}
+              onClick={() => window.open('https://trustqr-webapp.vercel.app/', '_blank')}
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-lg shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105 transform"
             >
-              Get Started
+              Launch My Link
             </Button>
           )}
         </div>
