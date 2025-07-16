@@ -14,16 +14,20 @@ const PricingCard = ({ plan, isAnnual, index }: PricingCardProps) => {
   const { processPayment, isProcessing } = usePayment();
 
   const handlePayment = () => {
-    const amount = isAnnual ? plan.price.annual : plan.price.monthly;
-    processPayment(plan.name.toLowerCase() as 'free' | 'premium' | 'vip', amount, isAnnual);
+    if (plan.paymentLink) {
+      window.open(plan.paymentLink, '_blank', 'noopener,noreferrer');
+    } else {
+      const amount = isAnnual ? plan.price.annual : plan.price.monthly;
+      processPayment(plan.name.toLowerCase() as 'free' | 'premium' | 'vip', amount, isAnnual);
+    }
   };
 
   return (
     <div
-      className={`animate-fade-in-up relative rounded-2xl border transition-all duration-300 hover:scale-105 transform ${
+      className={`animate-fade-in-up relative rounded-2xl border transition-all duration-300 hover:scale-105 transform hover:shadow-2xl ${
         plan.popular
           ? 'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 border-primary/30 shadow-2xl hover:shadow-primary/25'
-          : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:bg-card/70'
+          : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:bg-card/70 hover:shadow-lg'
       }`}
       style={{ animationDelay: `${(index + 4) * 0.1}s` }}
     >
@@ -63,6 +67,11 @@ const PricingCard = ({ plan, isAnnual, index }: PricingCardProps) => {
             {isAnnual && plan.price.monthly > 0 && (
               <p className="text-xs sm:text-sm text-muted-foreground mt-2">
                 {formatPrice(plan.price.monthly)} billed monthly
+              </p>
+            )}
+            {plan.subtext && (
+              <p className="text-xs sm:text-sm text-muted-foreground mt-3 px-2">
+                {plan.subtext}
               </p>
             )}
           </div>
