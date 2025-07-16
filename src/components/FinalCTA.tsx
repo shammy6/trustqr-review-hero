@@ -1,16 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useClickTracking } from "@/hooks/useClickTracking";
-
 const FinalCTA = () => {
-  const { trackClick } = useClickTracking();
-
+  const {
+    trackClick
+  } = useClickTracking();
   const handleCTAClick = async () => {
     console.log('CTA button clicked - starting tracking process');
-    
     try {
       // Track the click event before redirecting
       const result = await trackClick('TrustQR', 'cta_click');
-      
       if (result.success) {
         console.log('Click tracking completed successfully');
       } else {
@@ -19,14 +17,12 @@ const FinalCTA = () => {
     } catch (error) {
       console.error('Click tracking threw an error:', error);
     }
-    
+
     // Always redirect regardless of tracking success/failure
     console.log('Opening app URL...');
     window.open('https://trustqr-webapp.vercel.app/', '_blank', 'noopener,noreferrer');
   };
-
-  return (
-    <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-primary/5 relative overflow-hidden">
+  return <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-primary/5 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-transparent"></div>
       <div className="absolute top-10 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -47,11 +43,7 @@ const FinalCTA = () => {
           </div>
 
           <div className="animate-scale-in animation-delay-400">
-            <Button 
-              size="lg" 
-              className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow"
-              onClick={handleCTAClick}
-            >
+            <Button size="lg" className="text-xl px-12 py-6 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-2xl hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 animate-pulse-glow" onClick={handleCTAClick}>
               Launch My Link
             </Button>
           </div>
@@ -65,7 +57,9 @@ const FinalCTA = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
             <div className="animate-fade-in-up animation-delay-600">
               <div className="text-center p-6 bg-card/30 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300 hover:scale-105 transform">
-                <div className="text-4xl font-bold text-primary mb-2">14 Days</div>
+                <div className="text-4xl font-bold text-primary mb-2">7 Days
+
+              </div>
                 <div className="text-muted-foreground text-lg">Free Trial</div>
               </div>
             </div>
@@ -84,8 +78,6 @@ const FinalCTA = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FinalCTA;
